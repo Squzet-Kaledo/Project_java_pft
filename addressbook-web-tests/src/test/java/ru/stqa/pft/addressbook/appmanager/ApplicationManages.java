@@ -1,25 +1,23 @@
-package ru.stqa.pft.addressbook;
+package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
 
-public class TestBase {
+public class ApplicationManages {
     public WebDriver driver;
-    private String baseUrl;
     public boolean acceptNextAlert = true;
-    private StringBuffer verificationErrors = new StringBuffer();
+    public StringBuffer verificationErrors = new StringBuffer();
+    public String baseUrl;
 
-    @BeforeClass(alwaysRun = true)
-    public void setUp() throws Exception {
+    public void init() {
         System.setProperty("webdriver.gecko.driver", "./libs/geckodriver.exe");
         driver =  new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         baseUrl = "https://www.google.com/";
@@ -27,7 +25,7 @@ public class TestBase {
         login("admin","secret");
     }
 
-    private void login(String username, String password) {
+    public void login(String username, String password) {
         driver.get("http://localhost/addressbook/");
         driver.findElement(By.name("user")).click();
         driver.findElement(By.name("user")).clear();
@@ -37,15 +35,15 @@ public class TestBase {
         driver.findElement(By.xpath("//input[@value='Login']")).click();
     }
 
-    protected void returnToGroupPage(String s) {
+    public void returnToGroupPage(String s) {
         driver.findElement(By.linkText(s)).click();
     }
 
-    protected void submitGroupCreation() {
+    public void submitGroupCreation() {
         driver.findElement(By.name("submit")).click();
     }
 
-    protected void fillGroupForm(GroupData groupData) {
+    public void fillGroupForm(GroupData groupData) {
         driver.findElement(By.name("group_name")).clear();
         driver.findElement(By.name("group_name")).clear();
         driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
@@ -55,36 +53,31 @@ public class TestBase {
         driver.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
-    protected void initGroupCreation(String s) {
+    public void initGroupCreation(String s) {
         driver.findElement(By.name(s)).click();
     }
 
-    protected void initContactCreation(String s) {
+    public void initContactCreation(String s) {
         driver.findElement(By.name(s)).click();
     }
 
-    protected void gotoGroupPage(String groups) {
+    public void gotoGroupPage(String groups) {
         returnToGroupPage(groups);
     }
 
-    protected void gotoAddNewPage(String addnew) {
+    public void gotoAddNewPage(String addnew) {
         returnToGroupPage(addnew);
     }
 
-    protected void gotoHomePage(String home) {
+    public void gotoHomePage(String home) {
         returnToGroupPage(home);
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() throws Exception {
+    public void stop() {
         driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
     }
 
-    private boolean isElementPresent(By by) {
+    public boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
             return true;
@@ -93,7 +86,7 @@ public class TestBase {
         }
     }
 
-    private boolean isAlertPresent() {
+    public boolean isAlertPresent() {
         try {
             driver.switchTo().alert();
             return true;
@@ -117,24 +110,24 @@ public class TestBase {
         }
     }
 
-    protected void deleteSelectedGroups(String s) {
+    public void deleteSelectedGroups(String s) {
       driver.findElement(By.xpath(s)).click();
     }
 
-    protected void selectGroup() {
+    public void selectGroup() {
       driver.findElement(By.xpath("(//input[@name='selected[]'])[1]")).click();
     }
 
-    protected void deleteSelectedContacts() {
+    public void deleteSelectedContacts() {
       driver.findElement(By.xpath("//input[@value='Delete']")).click();
       assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
     }
 
-    protected void selectContact(By name) {
+    public void selectContact(By name) {
       driver.findElement(name).click();
     }
 
-    protected void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData) {
         driver.findElement(By.name("firstname")).click();
         driver.findElement(By.name("firstname")).clear();
         driver.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
@@ -194,15 +187,15 @@ public class TestBase {
 
     }
 
-    protected void returnToHomePage(String s) {
+    public void returnToHomePage(String s) {
         driver.findElement(By.linkText(s)).click();
     }
 
-    protected void submitContactCreation() {
+    public void submitContactCreation() {
         driver.findElement(By.name("submit")).click();
     }
 
-    protected void initContactCreation(By add_new) {
+    public void initContactCreation(By add_new) {
         driver.findElement(add_new).click();
     }
 }
