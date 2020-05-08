@@ -9,25 +9,33 @@ import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class GroupCreationTests {
-    FirefoxDriver wd;
+import static org.testng.Assert.fail;
 
-    @BeforeMethod
+public class GroupCreationTests {
+    private WebDriver driver;
+    private String baseUrl;
+    private boolean acceptNextAlert = true;
+    private StringBuffer verificationErrors = new StringBuffer();
+
+    @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
-        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        wd.get("http://localhost/addressbook/group.php");
-        login("admin", "secret");
+        System.setProperty("webdriver.gecko.driver", "./libs/geckodriver.exe");
+        driver =  new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+        baseUrl = "https://www.google.com/";
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        login("admin","secret");
     }
 
     private void login(String username, String password) {
-        initGroupCreation("user");
-        wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys(username);
-        wd.findElement(By.name("pass")).clear();
-        wd.findElement(By.name("pass")).sendKeys(password);
-        wd.findElement(By.xpath("//input[@value='Login']")).click();
+        driver.get("http://localhost/addressbook/");
+        driver.findElement(By.name("user")).click();
+        driver.findElement(By.name("user")).clear();
+        driver.findElement(By.name("user")).sendKeys(username);
+        driver.findElement(By.name("pass")).clear();
+        driver.findElement(By.name("pass")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@value='Login']")).click();
     }
+
 
 
     @Test
@@ -40,45 +48,70 @@ public class GroupCreationTests {
     }
 
     private void returnToGroupPage(String s) {
-        wd.findElement(By.linkText(s)).click();
+        driver.findElement(By.linkText(s)).click();
     }
 
     private void submitGroupCreation() {
-        wd.findElement(By.name("submit")).click();
+        driver.findElement(By.name("submit")).click();
     }
 
     private void fillGroupForm(GroupData groupData) {
-        wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys(groupData.getName());
-        wd.findElement(By.name("group_header")).clear();
-        wd.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
-        wd.findElement(By.name("group_footer")).clear();
-        wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
+        driver.findElement(By.name("group_name")).clear();
+        driver.findElement(By.name("group_name")).clear();
+        driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
+        driver.findElement(By.name("group_header")).clear();
+        driver.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
+        driver.findElement(By.name("group_footer")).clear();
+        driver.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
     private void initGroupCreation(String s) {
-        wd.findElement(By.name(s)).click();
+        driver.findElement(By.name(s)).click();
     }
 
     private void gotoGroupPage(String groups) {
         returnToGroupPage(groups);
     }
 
-    @AfterMethod
-    public void tearDown() {
-        wd.quit();
+    @AfterClass(alwaysRun = true)
+    public void tearDown() throws Exception {
+        driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+            fail(verificationErrorString);
+        }
     }
 
-
-    public static boolean isAlertPresent(FirefoxDriver wd) {
+    private boolean isElementPresent(By by) {
         try {
-            wd.switchTo().alert();
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    private boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
             return true;
         } catch (NoAlertPresentException e) {
             return false;
         }
     }
 
+    private String closeAlertAndGetItsText() {
+        try {
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            if (acceptNextAlert) {
+                alert.accept();
+            } else {
+                alert.dismiss();
+            }
+            return alertText;
+        } finally {
+            acceptNextAlert = true;
+        }
+    }
 }
-
