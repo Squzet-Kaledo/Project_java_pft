@@ -1,30 +1,30 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactData {
-    private final String firstname;
-    private final String middlename;
-    private final String lastname;
-    private final String nickname;
-    private final String title;
-    private final String company;
-    private final String address;
-    private final String home;
-    private final String mobile;
-    private final String work;
-    private final String fax;
-    private final String email;
-    private final String email2;
-    private final String email3;
-    private final String homepage;
-    private final String bday;
-    private final String bmonth;
-    private final String byear;
-    private final String aday;
-    private final String amonth;
-    private final String ayear;
-    private final String group;
-    private final String address2;
-    private final String phone2;
+    private String firstname;
+    private String middlename;
+    private String lastname;
+    private String nickname;
+    private String title;
+    private String company;
+    private String address;
+    private String home;
+    private String mobile;
+    private String work;
+    private String fax;
+    private String email;
+    private String email2;
+    private String email3;
+    private String homepage;
+    private String bday;
+    private String bmonth;
+    private String byear;
+    private String aday;
+    private String amonth;
+    private String ayear;
+    private String group;
+    private String address2;
+    private String phone2;
 
     public ContactData(String Firstname, String Middlename, String lastname, String nickname, String title, String company, String address, String home, String mobile, String work, String fax, String email, String email2, String email3, String homepage, String bday, String bmonth, String byear, String aday, String amonth, String ayear, String group, String address2, String phone2) {
         firstname = Firstname;
@@ -135,10 +135,6 @@ public class ContactData {
 
     public String getAyear() {
         return ayear;
-    }
-
-    public String getGroup() {
-        return group;
     }
 
     public String getAddress2() {

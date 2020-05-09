@@ -13,4 +13,8 @@ private WebDriver driver;
     public void gotoGroupPage() {
         driver.findElement(By.linkText("groups")).click();
     }
+
+    public void gotoHomePage() {
+        driver.findElement(By.linkText("home")).click();
+    }
 }
