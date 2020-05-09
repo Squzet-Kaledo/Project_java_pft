@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbook.tests;
+/*package ru.stqa.pft.addressbook.tests;
 
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
@@ -12,4 +12,4 @@ public class ContactDeletionTests extends TestBase {
     applicationManages.deleteSelectedContacts();
   }
 
-}
+}*/
