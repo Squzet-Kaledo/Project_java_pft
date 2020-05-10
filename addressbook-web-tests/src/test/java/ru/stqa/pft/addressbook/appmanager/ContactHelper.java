@@ -8,7 +8,7 @@ import ru.stqa.pft.addressbook.model.ContactData;
 
 import static org.testng.Assert.assertTrue;
 
-public class ContactHelper {
+public class ContactHelper extends HelperBase{
     private WebDriver driver;
     private boolean acceptNextAlert;
 
@@ -17,13 +17,13 @@ public class ContactHelper {
     }
 
     public void initContactCreation(String s) {
-        driver.findElement(By.name(s)).click();
+        click(By.name(s));
     }
 
     public void deleteSelectedContacts() {
         acceptNextAlert = true;
-        driver.findElement(By.xpath("//input[@value='Delete']")).click();
-      assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
+        click(By.xpath("//input[@value='Delete']"));
+        assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
     }
     
     public String closeAlertAndGetItsText() {
@@ -41,78 +41,64 @@ public class ContactHelper {
         }
     }
     public void selectContact(By name) {
-      driver.findElement(name).click();
+        click(name);
     }
 
     public void fillContactForm(ContactData contactData) {
-        driver.findElement(By.name("firstname")).click();
-        driver.findElement(By.name("firstname")).clear();
-        driver.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
-        driver.findElement(By.name("middlename")).clear();
-        driver.findElement(By.name("middlename")).sendKeys(contactData.getMiddlename());
-        driver.findElement(By.name("lastname")).clear();
-        driver.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-        driver.findElement(By.name("nickname")).clear();
-        driver.findElement(By.name("nickname")).sendKeys(contactData.getNickname());
-        driver.findElement(By.name("title")).clear();
-        driver.findElement(By.name("title")).sendKeys(contactData.getTitle());
-        driver.findElement(By.name("company")).clear();
-        driver.findElement(By.name("company")).sendKeys(contactData.getCompany());
-        driver.findElement(By.name("address")).clear();
-        driver.findElement(By.name("address")).sendKeys(contactData.getAddress());
-        driver.findElement(By.name("home")).clear();
-        driver.findElement(By.name("home")).sendKeys(contactData.getHome());
-        driver.findElement(By.name("mobile")).clear();
-        driver.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
-        driver.findElement(By.name("work")).clear();
-        driver.findElement(By.name("work")).sendKeys(contactData.getWork());
-        driver.findElement(By.name("fax")).clear();
-        driver.findElement(By.name("fax")).sendKeys(contactData.getFax());
-        driver.findElement(By.name("email")).clear();
-        driver.findElement(By.name("email")).sendKeys(contactData.getEmail());
-        driver.findElement(By.name("email2")).clear();
-        driver.findElement(By.name("email2")).sendKeys(contactData.getEmail2());
-        driver.findElement(By.name("email3")).clear();
-        driver.findElement(By.name("email3")).sendKeys(contactData.getEmail3());
-        driver.findElement(By.name("homepage")).clear();
-        driver.findElement(By.name("homepage")).sendKeys(contactData.getHomepage());
-        driver.findElement(By.name("bday")).click();
+        type( By.name("firstname"), contactData.getFirstname());
+        type( By.name("middlename"), contactData.getMiddlename());
+        type( By.name("lastname"), contactData.getLastname());
+        type( By.name("nickname"), contactData.getNickname());
+        type( By.name("title"), contactData.getTitle());
+        type( By.name("company"), contactData.getCompany());
+        type( By.name("address"), contactData.getAddress());
+        type( By.name("home"), contactData.getHome());
+        type( By.name("mobile"), contactData.getMobile());
+        type( By.name("work"), contactData.getWork());
+        type( By.name("fax"), contactData.getFax());
+        type( By.name("email"), contactData.getEmail());
+        type( By.name("email2"), contactData.getEmail2());
+        type( By.name("email3"), contactData.getEmail3());
+        type( By.name("homepage"), contactData.getHomepage());
+        click(By.name("bday"));
         new Select(driver.findElement(By.name("bday"))).selectByVisibleText(contactData.getBday());
-        driver.findElement(By.name("bday")).click();
-        driver.findElement(By.name("bmonth")).click();
+        click(By.name("bday"));
+        click(By.name("bmonth"));
         new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getBmonth());
-        driver.findElement(By.name("bmonth")).click();
-        driver.findElement(By.name("byear")).click();
-        driver.findElement(By.name("byear")).clear();
-        driver.findElement(By.name("byear")).sendKeys(contactData.getByear());
-        driver.findElement(By.name("aday")).click();
+        click(By.name("bmonth"));
+        type( By.name("byear"), contactData.getByear());
+        click(By.name("aday"));
         new Select(driver.findElement(By.name("aday"))).selectByVisibleText(contactData.getAday());
-        driver.findElement(By.name("aday")).click();
-        driver.findElement(By.name("amonth")).click();
+        click(By.name("aday"));
+        click(By.name("amonth"));
         new Select(driver.findElement(By.name("amonth"))).selectByVisibleText(contactData.getAmonth());
-        driver.findElement(By.name("amonth")).click();
-        driver.findElement(By.name("ayear")).click();
-        driver.findElement(By.name("ayear")).clear();
-        driver.findElement(By.name("ayear")).sendKeys(contactData.getAyear());
-        driver.findElement(By.name("address2")).click();
-        driver.findElement(By.name("address2")).clear();
-        driver.findElement(By.name("address2")).sendKeys(contactData.getAddress2());
-        driver.findElement(By.name("phone2")).click();
-        driver.findElement(By.name("phone2")).clear();
-        driver.findElement(By.name("phone2")).sendKeys(contactData.getPhone2());
+        click(By.name("amonth"));
+        type( By.name("ayear"), contactData.getAyear());
+        type( By.name("address2"), contactData.getAddress2());
+        type( By.name("phone2"), contactData.getPhone2());
 
 
+    }
+
+    private void type(By locator, String text) {
+        click(locator);
+        driver.findElement(locator).clear();
+        driver.findElement(locator).sendKeys(text);
     }
 
     public void returnToHomePage(String s) {
-        driver.findElement(By.linkText(s)).click();
+        click(By.linkText(s));
     }
 
     public void submitContactCreation() {
-        driver.findElement(By.name("submit")).click();
+        click(By.name("submit"));
+    }
+
+    private void click(By locator) {
+        driver.findElement(locator).click();
     }
 
     public void initContactCreation(By add_new) {
-        driver.findElement(add_new).click();
+        click(add_new);
     }
 }
