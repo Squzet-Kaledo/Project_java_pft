@@ -9,11 +9,10 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import static org.testng.Assert.assertTrue;
 
 public class ContactHelper extends HelperBase{
-    private WebDriver driver;
     private boolean acceptNextAlert;
 
     public ContactHelper(WebDriver driver) {
-        this.driver=driver;
+        super(driver);
     }
 
     public void initContactCreation(String s) {
@@ -80,22 +79,12 @@ public class ContactHelper extends HelperBase{
 
     }
 
-    private void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
-    }
-
     public void returnToHomePage(String s) {
         click(By.linkText(s));
     }
 
     public void submitContactCreation() {
         click(By.name("submit"));
-    }
-
-    private void click(By locator) {
-        driver.findElement(locator).click();
     }
 
     public void initContactCreation(By add_new) {

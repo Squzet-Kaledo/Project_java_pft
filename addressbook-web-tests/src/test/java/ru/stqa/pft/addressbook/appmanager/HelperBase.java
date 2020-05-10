@@ -11,14 +11,14 @@ public class HelperBase {
         this.driver=driver;
     }
 
-    protected void click(By locator) {
-        driver.findElement(locator).click();
-    }
-
     protected void type(By locator, String text) {
         click(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
+    }
+
+    protected void click(By locator) {
+        driver.findElement(locator).click();
     }
 
     public boolean isAlertPresent() {
@@ -30,4 +30,6 @@ public class HelperBase {
         }
     }
 
-}
+
+    }
+
