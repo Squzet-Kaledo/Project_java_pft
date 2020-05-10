@@ -90,4 +90,12 @@ public class ContactHelper extends HelperBase{
     public void initContactCreation(By add_new) {
         click(add_new);
     }
+
+    public void initContactModification(){
+    click(By.cssSelector("img[alt=\"Edit\"]"));
+    }
+
+    public void submitContactModification() {
+    click(By.xpath("(//input[@name='update'])[2]"));
+    }
 }
