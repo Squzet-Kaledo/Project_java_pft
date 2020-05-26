@@ -12,6 +12,7 @@ import ru.stqa.pft.dns.SeleniumAssertion;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 public class UntitledTestCase {
@@ -48,13 +49,18 @@ public class UntitledTestCase {
             .perform();
     driver.findElement(By.linkText("Процессоры")).click();
     driver.findElement(By.cssSelector(".ui-checkbox-dropdown__label")).click();
+
     SeleniumAssertion check = new SeleniumAssertion(driver);
-    boolean a = check.assertPresentElementLocated(By.cssSelector(".product-pricei__current"));
-    boolean b = check.assertPresentElementLocated(By.cssSelector(".product-priceop__current"));
+    check.assertNotPresentElementLocated(By.cssSelector(".product-price__current"));
+
+    boolean a = isElementPresent(By.cssSelector(".product-price__current"));
+    boolean b = isElementPresent(By.cssSelector(".product-price__currenfjgjt"));
     SoftAssert s = new SoftAssert();
-    s.assertEquals(a,true);
-    s.assertEquals(b, true);
+    s.assertEquals(a,false,"Элемент присутствует");
+    s.assertEquals(b,true,"Элемент отсутствует");
     s.assertAll();
+
+
 
     /*SoftAssert a = new SoftAssert();
     a.assertEquals(By.cssSelector(".product-price__current"));

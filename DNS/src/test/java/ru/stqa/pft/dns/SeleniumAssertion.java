@@ -42,13 +42,23 @@ public class SeleniumAssertion extends Assertion {
     }
 
     public boolean assertPresentElementLocated(final By locator) {
-        doAssert(new SeleniumAssert("Здесь нет элемента " + locator) {
+         doAssert(new SeleniumAssert("Здесь нет элемента " + locator) {
             @Override
             public void doAssert() {
                 assertTrue(driver.findElements(locator).size() > 0, getMessage());
             }
         });
         return true;
+   }
+
+    public boolean assertNotPresentElementLocated(final By locator) {
+        doAssert(new SeleniumAssert("ВСЕМ!ВСЕМ!ВСЕМ! Элемент есть на странице " + locator) {
+            @Override
+            public void doAssert() {
+                assertTrue(driver.findElements(locator).size() == 0, getMessage());
+            }
+        });
+        return false;
     }
 
     public void assertDisplayed(final WebElement element) {
