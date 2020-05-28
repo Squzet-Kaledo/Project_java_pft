@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.asserts.Assertion;
 import org.testng.asserts.IAssert;
 
-public class SeleniumAssertion extends Assertion {
+public class SeleniumAssertion extends Assertion{
 
     private final WebDriver driver;
 

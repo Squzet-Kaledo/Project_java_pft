@@ -1,25 +1,27 @@
 package com.example.tests;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-import ru.stqa.pft.dns.SeleniumAssertion;
 
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
+import static org.testng.Assert.*;
 
 public class UntitledTestCase {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
+  private WebElement f;
+  private Object p;
 
 
   @BeforeClass(alwaysRun = true)
@@ -31,7 +33,7 @@ public class UntitledTestCase {
   }
 
   @Test
-  public void testAssertion() {
+  public <o, l> void testAssertion() {
     driver.get("https://www.dns-shop.ru/catalog/");
     WebElement element1 = driver.findElement(By.cssSelector(".catalog-spoiler"));
     new Actions(driver)
@@ -49,7 +51,7 @@ public class UntitledTestCase {
             .perform();
     driver.findElement(By.linkText("Процессоры")).click();
     driver.findElement(By.cssSelector(".ui-checkbox-dropdown__label")).click();
-
+/*
     SeleniumAssertion check = new SeleniumAssertion(driver);
     check.assertNotPresentElementLocated(By.cssSelector(".product-price__current"));
 
@@ -60,13 +62,36 @@ public class UntitledTestCase {
     s.assertEquals(b,true,"Элемент отсутствует");
     s.assertAll();
 
+    isElementPresent(By.cssSelector(".product-price__current"));
+*/
+   /*WebElement n = driver.findElement(By.cssSelector(".ui-checkbox-group"));
+   n.findElement(By.cssSelector("span:nth-child(3)"));
+
+   assertTrue(driver.findElement(By.cssSelector(".ui-checkbox-group")).getText().contains("Мурино на Шувалова"));
+*/
+
+/*
+    List<WebElement> linksToClick = driver.findElement(By.cssSelector(".ui-checkbox-group")).findElements(By.cssSelector(".ui-checkbox"));
+    List<String> myList = linksToClick.collect(Collectors.toList());
+*/
+/*
+   String linksToClik = driver.findElement(By.cssSelector(".ui-checkbox-group")).getText();
+   ArrayList<String> arrayList=new ArrayList(Arrays.asList(linksToClik.split("\n",183)));
+   Collections.sort(arrayList);
+   ArrayList<String> arrayList2=new ArrayList(Arrays.asList(linksToClik.split("\n",183)));
+   Assert.assertEquals(arrayList,arrayList2);*/
 
 
-    /*SoftAssert a = new SoftAssert();
-    a.assertEquals(By.cssSelector(".product-price__current"));
 
-    a.assertAll();
-   /* assertFalse(isElementPresent(By.cssSelector("label:nth-child(2) span")));*/
+
+
+
+
+
+
+
+
+
 
   }
 
