@@ -13,15 +13,19 @@ import org.testng.annotations.Test;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
 import static org.testng.Assert.*;
 
-public class UntitledTestCase {
+public class UntitledTestCase<pumo> {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private WebElement f;
   private Object p;
+  private WebElement jo;
+  private int n;
+  private Object String;
 
 
   @BeforeClass(alwaysRun = true)
@@ -33,16 +37,16 @@ public class UntitledTestCase {
   }
 
   @Test
-  public <o, l> void testAssertion() {
+  public void testAssertion() {
     driver.get("https://www.dns-shop.ru/catalog/");
     WebElement element1 = driver.findElement(By.cssSelector(".catalog-spoiler"));
     new Actions(driver)
-            .moveToElement(element1,160,5)
+            .moveToElement(element1, 160, 5)
             .click()
             .perform();
     WebElement element2 = driver.findElement(By.linkText("Компьютеры"));
     new Actions(driver)
-    .moveToElement(element2)
+            .moveToElement(element2)
             .perform();
     WebElement element3 = driver.findElement(By.linkText("Комплектующие для ПК"));
     new Actions(driver)
@@ -78,23 +82,22 @@ public class UntitledTestCase {
    String linksToClik = driver.findElement(By.cssSelector(".ui-checkbox-group")).getText();
    ArrayList<String> arrayList=new ArrayList(Arrays.asList(linksToClik.split("\n",183)));
    Collections.sort(arrayList);
+   System.out.print(arrayList.size());
    ArrayList<String> arrayList2=new ArrayList(Arrays.asList(linksToClik.split("\n",183)));
-   Assert.assertEquals(arrayList,arrayList2);*/
-
-
-
-
-
-
-
-
-
-
-
-
-
+   Assert.assertEquals(arrayList,arrayList2);
+*/
+    jo = driver.findElement(By.cssSelector(".ui-checkbox-group"));
+    ArrayList<WebElement> element = (ArrayList<WebElement>) jo.findElements(By.cssSelector(".ui-checkbox"));
+    String pumo = "ААААААААААААААААААААААААААААААААААААА";
+    for (WebElement elements: element) {
+      pumo+="><><><" + elements.getText(); }
+    ArrayList<String> jin = new ArrayList(Arrays.asList(pumo.split("><><><",100)));
+    jin.remove("ААААААААААААААААААААААААААААААААААААА");
+   Collections.sort(jin);
+    ArrayList<String> jin2 = new ArrayList(Arrays.asList(pumo.split("><><><",100)));
+    jin2.remove("ААААААААААААААААААААААААААААААААААААА");
+    ;Assert.assertEquals(jin2,jin);
   }
-
 
 
           @AfterClass(alwaysRun = true)
