@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb599ba7-0963-491a-a442-40b3c4bd1216" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/example/tests/UntitledTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/example/tests/UntitledTestCase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -45,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+            <state relative-caret-position="445">
+              <caret line="97" column="79" selection-start-line="97" selection-start-column="79" selection-end-line="97" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,6 +109,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,14 +153,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590989575339" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591067647701" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -228,29 +227,12 @@
       <workItem from="1590662461953" duration="2522000" />
       <workItem from="1590826052324" duration="16737000" />
       <workItem from="1590914130823" duration="34026000" />
-      <workItem from="1590987594265" duration="2193000" />
+      <workItem from="1590987594265" duration="4936000" />
+      <workItem from="1591066082220" duration="1596000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 06m 37s.xml">
-      <configuration name="UntitledTestCase" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 08m 33s.xml">
-      <configuration name="UntitledTestCase" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 12m 36s.xml">
-      <configuration name="UntitledTestCase" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 21m 30s.xml">
-      <configuration name="UntitledTestCase" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 22m 39s.xml">
-      <configuration name="UntitledTestCase" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 23m 45s.xml">
-      <configuration name="UntitledTestCase" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="UntitledTestCase - 2020.06.01 at 08h 27m 21s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
@@ -263,15 +245,33 @@
     <history-entry file="UntitledTestCase - 2020.06.01 at 08h 33m 14s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="UntitledTestCase - 2020.06.01 at 17h 38m 06s.xml">
+      <configuration name="UntitledTestCase" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="UntitledTestCase - 2020.06.01 at 17h 39m 46s.xml">
+      <configuration name="UntitledTestCase" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 06m 25s.xml">
+      <configuration name="UntitledTestCase" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 08m 57s.xml">
+      <configuration name="UntitledTestCase" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 10m 44s.xml">
+      <configuration name="UntitledTestCase" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 14m 26s.xml">
+      <configuration name="UntitledTestCase" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179126000" />
+    <option name="totallyTimeSpent" value="183465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2835821" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2867804" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -311,8 +311,8 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/Comparator.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+        <state relative-caret-position="445">
+          <caret line="97" column="79" selection-start-line="97" selection-start-column="79" selection-end-line="97" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

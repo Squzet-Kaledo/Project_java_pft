@@ -10,6 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.text.Collator;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -79,22 +80,22 @@ public class UntitledTestCase<pumo> {
     List<String> myList = linksToClick.collect(Collectors.toList());
 */
 /*
-   String linksToClik = driver.findElement(By.cssSelector(".ui-checkbox-group")).getText();
-   ArrayList<String> arrayList=new ArrayList(Arrays.asList(linksToClik.split("\n",183)));
-   Collections.sort(arrayList);
-   System.out.print(arrayList.size());
-   ArrayList<String> arrayList2=new ArrayList(Arrays.asList(linksToClik.split("\n",183)));
-   Assert.assertEquals(arrayList,arrayList2);
+    String linksToClik = driver.findElement(By.cssSelector(".ui-checkbox-group")).getText();
+    ArrayList<String> arrayList = new ArrayList(Arrays.asList(linksToClik.split("\n", 183)));
+    Collections.sort(arrayList);
+    System.out.print(arrayList.size());
+    ArrayList<String> arrayList2 = new ArrayList(Arrays.asList(linksToClik.split("\n", 183)));
+    Assert.assertEquals(arrayList, arrayList2);
 */
     jo = driver.findElement(By.cssSelector(".ui-checkbox-group"));
     ArrayList<WebElement> element = (ArrayList<WebElement>) jo.findElements(By.cssSelector(".ui-checkbox"));
     String pumo = "ААААААААААААААААААААААААААААААААААААА";
     for (WebElement elements: element) {
       pumo+="><><><" + elements.getText(); }
-    ArrayList<String> jin = new ArrayList(Arrays.asList(pumo.split("><><><",100)));
+    ArrayList<String> jin = new ArrayList(Arrays.asList(pumo.split("><><><",150)));
     jin.remove("ААААААААААААААААААААААААААААААААААААА");
-   Collections.sort(jin);
-    ArrayList<String> jin2 = new ArrayList(Arrays.asList(pumo.split("><><><",100)));
+    Collections.sort(jin, Collator.getInstance());
+    ArrayList<String> jin2 = new ArrayList(Arrays.asList(pumo.split("><><><",150)));
     jin2.remove("ААААААААААААААААААААААААААААААААААААА");
     ;Assert.assertEquals(jin2,jin);
   }
