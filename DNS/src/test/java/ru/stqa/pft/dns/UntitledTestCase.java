@@ -14,6 +14,7 @@ import java.text.Collator;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import static com.google.common.base.Predicates.equalTo;
 import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
 import static org.testng.Assert.*;
 
@@ -27,6 +28,10 @@ public class UntitledTestCase<pumo> {
   private WebElement jo;
   private int n;
   private Object String;
+  private WebElement oni;
+  private WebElement bio;
+  private Iterable<? extends WebElement> el;
+  private WebElement ino;
 
 
   @BeforeClass(alwaysRun = true)
@@ -55,7 +60,7 @@ public class UntitledTestCase<pumo> {
             .click()
             .perform();
     driver.findElement(By.linkText("Процессоры")).click();
-    driver.findElement(By.cssSelector(".ui-checkbox-dropdown__label")).click();
+    /* driver.findElement(By.cssSelector(".ui-checkbox-dropdown__label")).click();*/
 /*
     SeleniumAssertion check = new SeleniumAssertion(driver);
     check.assertNotPresentElementLocated(By.cssSelector(".product-price__current"));
@@ -87,6 +92,7 @@ public class UntitledTestCase<pumo> {
     ArrayList<String> arrayList2 = new ArrayList(Arrays.asList(linksToClik.split("\n", 183)));
     Assert.assertEquals(arrayList, arrayList2);
 */
+  /*
     jo = driver.findElement(By.cssSelector(".ui-checkbox-group"));
     ArrayList<WebElement> element = (ArrayList<WebElement>) jo.findElements(By.cssSelector(".ui-checkbox"));
     String pumo = "ААААААААААААААААААААААААААААААААААААА";
@@ -97,8 +103,19 @@ public class UntitledTestCase<pumo> {
     Collections.sort(jin, Collator.getInstance());
     ArrayList<String> jin2 = new ArrayList(Arrays.asList(pumo.split("><><><",150)));
     jin2.remove("ААААААААААААААААААААААААААААААААААААА");
-    ;Assert.assertEquals(jin2,jin);
+    Assert.assertEquals(jin2,jin);
   }
+*/
+
+    ArrayList<WebElement> oni = (ArrayList<WebElement>) driver.findElements(By.cssSelector(".n-catalog-product"));
+    for (WebElement elements : oni) {
+      Assert.assertEquals(elements.findElements(By.cssSelector(".product-price__current")).size(), 7);
+    }
+  }
+
+
+
+
 
 
           @AfterClass(alwaysRun = true)

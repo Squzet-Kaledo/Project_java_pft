@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb599ba7-0963-491a-a442-40b3c4bd1216" name="Default Changelist" comment="" />
+    <list default="true" id="cb599ba7-0963-491a-a442-40b3c4bd1216" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/com/example/tests/UntitledTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/com/example/tests/UntitledTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="97" column="79" selection-start-line="97" selection-start-column="79" selection-end-line="97" selection-end-column="79" />
+            <state relative-caret-position="173">
+              <caret line="111" column="100" selection-start-line="111" selection-start-column="100" selection-end-line="111" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/SeleniumAssertion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            <state relative-caret-position="333">
+              <caret line="57" column="67" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +98,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-65" />
     <option name="y" value="486" />
     <option name="width" value="1936" />
@@ -106,7 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,12 +154,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591067678823" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591518042685" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -226,48 +230,55 @@
       <workItem from="1590914130823" duration="34026000" />
       <workItem from="1590987594265" duration="4936000" />
       <workItem from="1591066082220" duration="1993000" />
+      <workItem from="1591112239888" duration="8597000" />
+      <workItem from="1591204711739" duration="3837000" />
+      <workItem from="1591287943053" duration="6298000" />
+      <workItem from="1591434095083" duration="1097000" />
+      <workItem from="1591446973836" duration="3363000" />
+      <workItem from="1591511365492" duration="5201000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 27m 21s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 10h 25m 53s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 30m 22s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 10h 43m 43s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 32m 18s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 10h 44m 58s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 08h 33m 14s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 10h 45m 31s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 17h 38m 06s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 10h 46m 18s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.01 at 17h 39m 46s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 10h 47m 23s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 06m 25s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 10h 48m 26s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 08m 57s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 11h 16m 18s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 10m 44s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 11h 16m 54s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="UntitledTestCase - 2020.06.02 at 06h 14m 26s.xml">
+    <history-entry file="UntitledTestCase - 2020.06.07 at 11h 18m 43s.xml">
       <configuration name="UntitledTestCase" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183862000" />
+    <option name="totallyTimeSpent" value="212255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2867804" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30597016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -276,7 +287,7 @@
       <window_info id="Favorites" order="6" side_tool="true" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -305,30 +316,30 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/Comparator.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="97" column="79" selection-start-line="97" selection-start-column="79" selection-end-line="97" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/SeleniumAssertion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        <state relative-caret-position="333">
+          <caret line="57" column="67" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/pft/dns/UntitledTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="173">
+          <caret line="111" column="100" selection-start-line="111" selection-start-column="100" selection-end-line="111" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
