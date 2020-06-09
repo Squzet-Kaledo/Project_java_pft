@@ -1,5 +1,6 @@
 package com.example.tests;
 
+import javafx.beans.binding.IntegerBinding;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,14 +10,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import sun.awt.image.IntegerComponentRaster;
 
-import java.text.Collator;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static com.google.common.base.Predicates.equalTo;
 import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
 import static org.testng.Assert.*;
+
 
 public class UntitledTestCase<pumo> {
   private WebDriver driver;
@@ -32,6 +33,10 @@ public class UntitledTestCase<pumo> {
   private WebElement bio;
   private Iterable<? extends WebElement> el;
   private WebElement ino;
+  private int[] numbres;
+  private int[] numbers;
+  private int[] results;
+  private ArrayList<Integer> fog;
 
 
   @BeforeClass(alwaysRun = true)
@@ -106,19 +111,28 @@ public class UntitledTestCase<pumo> {
     Assert.assertEquals(jin2,jin);
   }
 */
-
+/*
     ArrayList<WebElement> oni = (ArrayList<WebElement>) driver.findElements(By.cssSelector(".n-catalog-product"));
     for (WebElement elements : oni) {
       Assert.assertEquals(elements.findElements(By.cssSelector(".product-price__current")).size(), 7);
     }
+*/
+
+    ArrayList<WebElement> onyx = (ArrayList<WebElement>) driver.findElements(By.cssSelector(".product-price__current"));
+    ArrayList<Integer> pumo1 = new ArrayList<>();
+    for (n = 0; n < onyx.size(); n++) {
+      pumo1.add(Integer.parseInt(onyx.get(n).getText().replaceAll(" ", "")));
+    }
+    Collections.sort(pumo1);
+    ArrayList<Integer> pumo2 = new ArrayList<>();
+    for (n = 0; n < onyx.size(); n++){
+      pumo2.add(Integer.parseInt(onyx.get(n).getText().replaceAll(" ", "")));
+    }
+    Assert.assertEquals(pumo2,pumo1);
   }
 
 
-
-
-
-
-          @AfterClass(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
     driver.quit();
     String verificationErrorString = verificationErrors.toString();
